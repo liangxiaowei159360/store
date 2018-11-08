@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="author" content="order by dede58.com"/>
+		<title>{% block title %}小米商城-个人中心{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/register.css">
+	</head>
+	<body>
+	<!-- start header -->
+		<header>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="http://www.mi.com/" target="_blank">兔子商城</a></li>
+						<li>|</li>
+						<li><a href="/">首页</a></li>
+						<li>|</li>
+						<li><a href="">信息</a></li>
+						<li>|</li>
+						<li><a href="">客服</a></li>
+						<li>|</li>
+						<li><a href="">金融</a></li>
+						<li>|</li>
+						<li><a href="">兔子商城移动版</a></li>
+						<li>|</li>
+						<li><a href="">问题反馈</a></li>
+						<li>|</li>
+						<li><a href="">Welcome!</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a href="">我的订单</a></div>
+					<div class="fr">
+						<ul>
+                            {% if request.user.is_authenticated %}
+                            <li class="dropdown">
+                                <a href="/store/store_self/">{{request.user}}</a>
+                            </li>
+                            {% else %}
+                            <li><a href="/users/users_login/">登录</a></li>
+                            <li><a href="/users/users_register/">注册</a></li>
+                            {% endif %}
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+        <br>
+        <br>
+        <br>
+        <div class="grzxbj">
+            <div class="selfinfo center">
+            <div class="lfnav fl">
+                {% block left %}
+                <div class="ddzx">订单中心</div>
+                <div class="subddzx">
+                    <ul>
+                        <li><a href="" >开通店铺</a></li>
+                        <li><a href="" style="color:#ff6700;font-weight:bold;">我的店铺</a></li>
+                        <li><a href="" >我的订单</a></li>
+                        <li><a href="" >修改店铺信息</a></li>
+                    </ul>
+                </div>
+                <div class="ddzx">个人中心</div>
+                <div class="subddzx">
+                    <ul>
+                        <li><a href="users/users_self/">我的个人中心</a></li>
+                        <li><a href="./self_info.html">修改个人信息</a></li>
+                        <li><a href="">消息通知</a></li>
+                        <li><a href="">收货地址</a></li>
+                    </ul>
+                </div>
+                {% endblock %}
+            </div>
+            <div class="rtcont fr">
+                {% block right %}
+                <div class="ddzxbt">交易订单</div>
+                <div class="ddxq">
+                    <div class="ddspt fl"><img src="./image/gwc_xiaomi6.jpg" alt=""></div>
+                    <div class="ddbh fl">订单号:1705205643098724</div>
+                    <div class="ztxx fr">
+                        <ul>
+                            <li>已发货</li>
+                            <li>￥2499.00</li>
+                            <li>2017/05/20 13:30</li>
+                            <li><a href="">订单详情></a></li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="ddxq">
+                    <div class="ddspt fl"><img src="./image/liebiao_hongmin4_dd.jpg" alt=""></div>
+                    <div class="ddbh fl">订单号:170526435444865</div>
+                    <div class="ztxx fr">
+                        <ul>
+                            <li>已发货</li>
+                            <li>￥1999.00</li>
+                            <li>2017/05/26 14:02</li>
+                            <li><a href="">订单详情></a></li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                {% endblock %}
+            </div>
+            <div class="clear"></div>
+            </div>
+        </div>
+<!-- self_info -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+		<footer class="mt20 center">
+			<div class="mt20">小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</div>
+			<div>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</div>
+			<div>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
+		</footer>
+	</body>
+</html>
